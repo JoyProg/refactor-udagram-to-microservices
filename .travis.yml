@@ -29,4 +29,4 @@ after_success:
   - docker push joyprog/udagram-api-feed:v1
   - docker push joyprog/udagram-api-user:v1
   - docker push joyprog/udagram-frontend:v1
-  - docker push joyprog/udagram-reverseproxy:v1
+  - docker push joyprog/reverseproxy:v1
