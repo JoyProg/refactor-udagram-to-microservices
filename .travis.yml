@@ -1,0 +1,13 @@
+# Build
+- docker-compose -f docker-compose-build.yaml build --parallel
+# Tagging
+- docker tag udagram-api-feed joyprog/udagram-api-feed:v1
+- docker tag udagram-api-user joyprog/udagram-api-user:v1
+- docker tag udagram-frontend joyprog/udagram-frontend:v1
+- docker tag udagram-reverseproxy joyprog/udagram-reverseproxy:v1
+ #Push
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker push joyprog/udagram-api-feed:v1
+- docker push joyprog/udagram-api-user:v1
+- docker push joyprog/udagram-frontend:v1
+- docker push joyprog/udagram-reverseproxy:v1
