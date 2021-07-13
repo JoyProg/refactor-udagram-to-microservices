@@ -18,15 +18,15 @@ script:
   # Build
   - docker-compose -f ./docker/docker-compose-build.yaml build --parallel
   # Tagging
-  - docker tag udagram-api-feed joyprog/udagram-api-feed:v2
-  - docker tag udagram-api-user joyprog/udagram-api-user:v2
-  - docker tag udagram-frontend joyprog/udagram-frontend:v2
-  - docker tag reverseproxy joyprog/reverseproxy:v2
+  - docker tag udagram-api-feed joyprog/udagram-api-feed:v3
+  - docker tag udagram-api-user joyprog/udagram-api-user:v3
+  - docker tag udagram-frontend joyprog/udagram-frontend:v3
+  - docker tag reverseproxy joyprog/reverseproxy:v3
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push joyprog/udagram-api-feed:v2
-  - docker push joyprog/udagram-api-user:v2
-  - docker push joyprog/udagram-frontend:v2
-  - docker push joyprog/reverseproxy:v2
+  - docker push joyprog/udagram-api-feed:v3
+  - docker push joyprog/udagram-api-user:v3
+  - docker push joyprog/udagram-frontend:v3
+  - docker push joyprog/reverseproxy:v3
