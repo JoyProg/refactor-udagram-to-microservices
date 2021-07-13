@@ -40,3 +40,8 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+#kubernetes deployment
+kubernetes/aws-secret-details.yaml
+kubernetes/env-configmap-details.yaml
+kubernetes/env-secret-details.yaml
