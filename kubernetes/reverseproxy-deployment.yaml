@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-        - image: joyprog/reverseproxy:v1
+        - image: joyprog/reverseproxy:v2
           name: reverseproxy
           imagePullPolicy: Always
           resources:
