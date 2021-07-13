@@ -5,18 +5,20 @@ node_js:
 services:
   - docker
 
+before_install: cd docker
+
 # Pre-testing installs
 install:
   - echo "nothing needs to be installed"
 
 # Scripts to be run such as tests
 before_script:
-  - echo "no tests"
+  - echo "no tests" 
 
 script:
   - docker --version # print the version for logging
   # Build
-  - docker-compose -f ./docker/docker-compose-build.yaml build --parallel
+  - docker-compose -f docker-compose-build.yaml build --parallel
   # Tagging
   - docker tag udagram-api-feed joyprog/udagram-api-feed:v1
   - docker tag udagram-api-user joyprog/udagram-api-user:v1
