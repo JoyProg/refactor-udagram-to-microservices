@@ -5,7 +5,7 @@ metadata:
     service: reverseproxy
   name: reverseproxy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       service: reverseproxy
@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-        - image: joyprog/reverseproxy:v2
+        - image: joyprog/reverseproxy:v6
           name: reverseproxy
           imagePullPolicy: Always
           resources:
